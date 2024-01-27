@@ -42,7 +42,6 @@ const App = () => {
   const handleNext = () => {
     if (currentPage < allButtons.length - 1) {
       setCurrentPage(currentPage + 1);
-      console.log(currentPage)
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -62,7 +61,7 @@ const App = () => {
         </div>
       )}
 
-      {data.length > 0 && (
+      {data.length > 10 && (
         <div className="pagination">
           <span className={`pagination-button ${currentPage ? '':'pagination_disable'}`} onClick={handlePrevious} style={{background:'none',fontSize:'30px'}}>◀️</span>
           {allButtons.map((button, index) => (
