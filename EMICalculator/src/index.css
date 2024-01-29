@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.EmiContainer{
+  min-height: 450px;
+  width: 80%;
+  margin: 10px auto;
+}
+.EmiHeader{
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+input{
+  width: 100%;
+  padding: 5px;
+}
+.lables{
+  display: flex;
+  justify-content: space-between;
+}
+.lables :nth-child(2){
+  font-weight: 700;
+}
+
+.tenure{
+  display: flex;
+  justify-content: space-around;
+}
+.tenureBtn{
+  padding: 10px;
+  border-radius: 25px;
+  border: 0;
+  outline: 0;
+  width: 80px;
+  background-color: rgba(128, 128, 128, 0.233);
+  cursor: pointer;
+}
+.tenureBtn.active{
+  background-color: skyblue;
+  color: #fff;
+}
