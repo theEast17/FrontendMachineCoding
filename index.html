@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      height: 100vh;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: black;
+      display: flex;
+      color: white;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      height: 50vh;
+      width: 50vw;
+      display: flex;
+      gap: 20px;
+    }
+    .stars {
+      display: flex;
+      gap: 10px;
+    }
+    .star {
+      height: 20px;
+      border: 1px solid red;
+      width: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+    /* .star:hover{
+        background-color: rgba(0, 128, 0, 0.525);
+    } */
+    .rate {
+      /* border: 1px solid red; */
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="stars">
+        <span class="star">1</span>
+        <span class="star">2</span>
+        <span class="star">3</span>
+        <span class="star">4</span>
+        <span class="star">5</span>
+      </div>
+      <div class="rate">
+        <span></span>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const star = document.querySelectorAll(".star");
+    const rate = document.querySelector(".rate span");
+    let count=-1
+    star.forEach((stars, index) => {
+      stars.addEventListener("click", () => {
+        count=index
+        updateStars(count)  
+        rate.innerText = `${count + 1} star${count > 0 ? "s" : ""}`;
+    });
+    });
+
+    star.forEach((stars, index) => {
+      stars.addEventListener("mouseover", () => {
+        updateStars(index)
+      });
+      stars.addEventListener("mouseout", () => {
+        updateStars(count)
+      });
+    });
+
+    function updateStars(rating) {
+          star.forEach((stars, index) => {
+            if (index <= rating) {
+              stars.style.background = "green";
+            } else {
+              stars.style.background = "black";
+            }
+          });
+        }
+      
+  </script>
+</html>
+
+
+
+
+
+ 
